@@ -21,12 +21,13 @@ const listRef = document.querySelector("#gallery");
 const itemCreateRef = images.reduce(function (acc, element) {
   const itemRef = document.createElement("li");
   const imgRef = document.createElement("img");
+  imgRef.setAttribute("src", element.url);
+  imgRef.setAttribute("alt", element.alt);
   itemRef.append(imgRef);
-  element = imgRef.setAttribute("url", images.url);
-  element = imgRef.setAttribute("alt", images.alt);
+
   acc.push(itemRef);
   return acc;
 }, []);
-// console.log(itemCreateRef);
+
 listRef.append(...itemCreateRef);
 console.log(listRef);

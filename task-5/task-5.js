@@ -1,13 +1,13 @@
 const inputRef = document.getElementById("name-input");
 const outputRef = document.getElementById("name-output");
-// console.log(inputRef);
-// console.dir(outputRef.innerText);
 
 inputRef.addEventListener("input", (event) => {
   console.log(event.target.value);
-  if (inputRef.textContent !== " ") {
-    outputRef.textContent = event.target.value;
+  const userInputRef = event.target.value;
+
+  if (userInputRef.length !== 0) {
+    outputRef.textContent = userInputRef;
   } else {
-    // outputRef.textContent = textContent; ???
+    outputRef.textContent = "незнакомец";
   }
 });
